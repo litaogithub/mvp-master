@@ -1,15 +1,20 @@
 package com.common.litao.mvp.ui.main;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
 import com.alibaba.fastjson.JSON;
 import com.common.litao.mvp.R;
-import com.common.litao.mvp.adapter.CommonAdapterRv;
-import com.common.litao.mvp.adapter.ViewHolderRv;
+import com.common.litao.mvp.adapter.BaseRecyclerAdapter;
+import com.common.litao.mvp.adapter.BaseViewHolder;
+import com.common.litao.mvp.adapter.callback.SimpleItemTouchHelperCallback;
+import com.common.litao.mvp.adapter.listener.RequestLoadMoreListener;
+import com.common.litao.mvp.adapter.view.LoadType;
 import com.common.litao.mvp.base.BaseActivity;
 import com.common.litao.mvp.bean.MainDto;
 
@@ -22,8 +27,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @BindView(R.id.lst_employee)
     RecyclerView mRecyclerView;
-    private CommonAdapterRv mAdapter;
+    private BaseRecyclerAdapter<MainDto> mAdapter;
     private List<MainDto> mDatas = new ArrayList<>();
+    private boolean isFirst = true;
 
     @Override protected MainPresenter createPresenter() {
         return new MainPresenter(this);
@@ -38,15 +44,37 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     protected void initData() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter = getAdapter());
+        mAdapter.openLoadAnimation(false);
+        mAdapter.setLoadMoreType(LoadType.CUBES);
+        mAdapter.setOnLoadMoreListener(new RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (mAdapter.getData().size() >= 50) {
+                            mAdapter.notifyDataChangeAfterLoadMore(false);
+                            mAdapter.addNoMoreView();
+                        } else {
+                            presenter.loadEmployees();
+                        }
+                    }
+                },3000);
+            }
+        });
+        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(mAdapter);
+        ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(callback);
+        mAdapter.setItemTouchHelper(mItemTouchHelper);
+        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
     }
 
     @Override
-    public CommonAdapterRv<MainDto> getAdapter() {
-        return new CommonAdapterRv<MainDto>(this,R.layout.layout_employee_item,mDatas) {
+    public BaseRecyclerAdapter<MainDto> getAdapter() {
+        return new BaseRecyclerAdapter<MainDto>(this,mDatas,R.layout.layout_employee_item) {
             @Override
-            public void convert(ViewHolderRv holder, MainDto s) {
-                holder.setText(R.id.txt_title,s.getName());
-                holder.setText(R.id.txt_desc,s.getDesc());
+            protected void convert(BaseViewHolder helper, MainDto item) {
+                helper.setText(R.id.txt_title,item.getName());
+                helper.setText(R.id.txt_desc,item.getDesc());
             }
         };
     }
@@ -54,11 +82,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     @Override
     public void onClick(View v) {
         super.onClick(v);
-
-    }
-
-    @Override
-    protected void getBundleExtras(Bundle extras) {
 
     }
 
@@ -75,9 +98,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     public void onSuccess(String data, int type) {
-        mDatas.clear();
-        mDatas.addAll(JSON.parseArray(data,MainDto.class));
-        mAdapter.notifyDataSetChanged();
+        mAdapter.notifyDataChangeAfterLoadMore(JSON.parseArray(data,MainDto.class),true);
+//        mAdapter.setData(JSON.parseArray(data,MainDto.class));
     }
 
     @Override

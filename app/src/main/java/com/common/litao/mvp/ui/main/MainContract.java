@@ -1,6 +1,6 @@
 package com.common.litao.mvp.ui.main;
 
-import com.common.litao.mvp.adapter.CommonAdapterRv;
+import com.common.litao.mvp.adapter.BaseRecyclerAdapter;
 import com.common.litao.mvp.base.IPresent;
 import com.common.litao.mvp.base.IView;
 import com.common.litao.mvp.bean.MainDto;
@@ -14,7 +14,7 @@ import com.common.litao.mvp.bean.MainDto;
 
 public interface MainContract {
     interface View extends IView{
-        CommonAdapterRv<MainDto> getAdapter();
+        BaseRecyclerAdapter<MainDto> getAdapter();
     }
     interface Present extends IPresent{
         void loadEmployees();

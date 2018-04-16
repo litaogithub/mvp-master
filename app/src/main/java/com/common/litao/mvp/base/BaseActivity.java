@@ -6,16 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.common.litao.mvp.R;
+import com.common.litao.mvp.util.StatusBarUtil;
 
 import butterknife.ButterKnife;
-import com.common.litao.mvp.R;
-import com.common.litao.mvp.util.CustomToast;
 
 /**
  * Created by litao on 6/17/17.
@@ -29,17 +30,14 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     protected abstract P createPresenter();
     protected abstract void initialize(Bundle savedInstanceState);
     protected abstract void initData();
-    //获取页面传值数据
-    protected abstract void getBundleExtras(Bundle extras);
     protected abstract @LayoutRes int setLayout();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (null != getIntent().getExtras()) {
-            getBundleExtras(getIntent().getExtras());
-        }
         setContentView(setLayout());
+        //设置状态栏全透明
+        StatusBarUtil.setColor(this,getResources().getColor(R.color.colorPrimary),0);
         ButterKnife.bind(this);
         presenter = createPresenter();
         initialize(savedInstanceState);
@@ -48,33 +46,23 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
 
     public void setBarTitle(String title) {
         this.barTitleTitleTv = (TextView)this.findViewById(R.id.tv_bar_title_title);
-        if(barTitleTitleTv == null)
-            throw new NullPointerException("Please add baseTitleLayout");
         this.barTitleTitleTv.setText(title);
     }
 
     public void setBackView(int visible) {
         this.barTitleBackLl = (LinearLayout)this.findViewById(R.id.lv_bar_title_back);
-        if(barTitleBackLl == null)
-            throw new NullPointerException("Please add baseTitleLayout");
         this.barTitleBackLl.setVisibility(visible);
     }
 
     public void setBackBtn() {
         this.barTitleBackLl = (LinearLayout)this.findViewById(R.id.lv_bar_title_back);
-        if(barTitleBackLl == null)
-            throw new NullPointerException("Please add baseTitleLayout");
         this.barTitleBackLl.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(this.barTitleBackLl != null){
-            if(this.barTitleBackLl == v){
-                this.finish();
-            }
-        }else{
-            throw new NullPointerException("Please init setBackBtn method");
+        if(this.barTitleBackLl == v){
+            this.finish();
         }
     }
 
@@ -83,7 +71,8 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
      * @param message
      */
     public void toastShort(String message){
-        CustomToast.showToast(this,message, Toast.LENGTH_SHORT);
+//        CustomToast.showToast(this,message, Toast.LENGTH_SHORT);
+        Snackbar.make(getCurrentFocus(),message,Snackbar.LENGTH_SHORT).show();
     }
 
     /**
@@ -91,7 +80,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
      * @param message
      */
     public void toastLong(String message){
-        CustomToast.showToast(this,message,Toast.LENGTH_LONG);
+        Snackbar.make(getCurrentFocus(),message,Snackbar.LENGTH_LONG).show();
     }
 
     /**
