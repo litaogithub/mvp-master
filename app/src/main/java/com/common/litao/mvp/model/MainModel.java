@@ -1,9 +1,9 @@
-package isfaaghyth.app.mvp.model;
+package com.common.litao.mvp.model;
 
-import isfaaghyth.app.mvp.bean.BusinessBean;
-import isfaaghyth.app.mvp.base.BaseWgRequest;
-import isfaaghyth.app.mvp.network.InWhParams;
-import isfaaghyth.app.mvp.util.ParamUtil;
+import com.common.litao.mvp.bean.BusinessBean;
+import com.common.litao.mvp.base.BaseWgRequest;
+import com.common.litao.mvp.network.InWhParams;
+import com.common.litao.mvp.util.ParamUtil;
 import rx.Observable;
 
 /**
