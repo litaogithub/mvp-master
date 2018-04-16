@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.network;
+package com.common.litao.mvp.network;
 
 /**
  * Created by yanghao1 on 2017/11/27.

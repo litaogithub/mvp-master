@@ -1,8 +1,8 @@
-package isfaaghyth.app.mvp.ui.main;
+package com.common.litao.mvp.ui.main;
 
-import isfaaghyth.app.mvp.base.BasePresenter;
-import isfaaghyth.app.mvp.model.MainModel;
-import isfaaghyth.app.mvp.util.Test;
+import com.common.litao.mvp.base.BasePresenter;
+import com.common.litao.mvp.model.MainModel;
+import com.common.litao.mvp.util.Test;
 
 /**
  * Created by isfaaghyth on 6/17/17.

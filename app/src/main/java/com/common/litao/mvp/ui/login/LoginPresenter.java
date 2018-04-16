@@ -1,14 +1,13 @@
-package isfaaghyth.app.mvp.ui.login;
+package com.common.litao.mvp.ui.login;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import isfaaghyth.app.mvp.base.BasePresenter;
-import isfaaghyth.app.mvp.bean.BusinessBean;
-import isfaaghyth.app.mvp.network.RequestCallback;
-import isfaaghyth.app.mvp.ui.login.LoginContract;
-import isfaaghyth.app.mvp.model.LoginModel;
-import isfaaghyth.app.mvp.util.Const;
+import com.common.litao.mvp.base.BasePresenter;
+import com.common.litao.mvp.bean.BusinessBean;
+import com.common.litao.mvp.network.RequestCallback;
+import com.common.litao.mvp.model.LoginModel;
+import com.common.litao.mvp.util.Const;
 
 /**
  * Created by isfaaghyth on 6/17/17.

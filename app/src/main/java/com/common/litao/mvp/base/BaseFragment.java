@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.base;
+package com.common.litao.mvp.base;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import butterknife.ButterKnife;
-import isfaaghyth.app.mvp.R;
-import isfaaghyth.app.mvp.util.CustomToast;
+import com.common.litao.mvp.R;
+import com.common.litao.mvp.util.CustomToast;
 
 /**
  * author: litao29

@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.util;
+package com.common.litao.mvp.util;
 
 import android.app.Activity;
 import android.content.Context;
@@ -39,7 +39,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import isfaaghyth.app.mvp.App;
+import com.common.litao.mvp.App;
 
 /**
  * 工具类

@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.ui.main;
+package com.common.litao.mvp.ui.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,16 +7,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.alibaba.fastjson.JSON;
+import com.common.litao.mvp.R;
+import com.common.litao.mvp.adapter.CommonAdapterRv;
+import com.common.litao.mvp.adapter.ViewHolderRv;
+import com.common.litao.mvp.base.BaseActivity;
+import com.common.litao.mvp.bean.MainDto;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import isfaaghyth.app.mvp.R;
-import isfaaghyth.app.mvp.adapter.CommonAdapterRv;
-import isfaaghyth.app.mvp.adapter.ViewHolderRv;
-import isfaaghyth.app.mvp.base.BaseActivity;
-import isfaaghyth.app.mvp.bean.MainDto;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.View {
 

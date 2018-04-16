@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.bean;
+package com.common.litao.mvp.bean;
 
 /**
  * 业务bean

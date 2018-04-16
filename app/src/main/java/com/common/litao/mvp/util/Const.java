@@ -1,6 +1,6 @@
-package isfaaghyth.app.mvp.util;
+package com.common.litao.mvp.util;
 
-import isfaaghyth.app.mvp.BuildConfig;
+import com.common.litao.mvp.BuildConfig;
 
 /**
  * Created by isfaaghyth on 6/17/17.

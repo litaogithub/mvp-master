@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp;
+package com.common.litao.mvp;
 
 import org.junit.Test;
 

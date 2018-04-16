@@ -1,9 +1,9 @@
-package isfaaghyth.app.mvp.ui.main;
+package com.common.litao.mvp.ui.main;
 
-import isfaaghyth.app.mvp.adapter.CommonAdapterRv;
-import isfaaghyth.app.mvp.base.IPresent;
-import isfaaghyth.app.mvp.base.IView;
-import isfaaghyth.app.mvp.bean.MainDto;
+import com.common.litao.mvp.adapter.CommonAdapterRv;
+import com.common.litao.mvp.base.IPresent;
+import com.common.litao.mvp.base.IView;
+import com.common.litao.mvp.bean.MainDto;
 
 /**
  * author: litao29

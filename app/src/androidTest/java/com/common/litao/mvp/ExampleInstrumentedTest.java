@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp;
+package com.common.litao.mvp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

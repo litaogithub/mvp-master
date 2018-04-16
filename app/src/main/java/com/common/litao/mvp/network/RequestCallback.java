@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.network;
+package com.common.litao.mvp.network;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.jd.mrd.network.view.CommonLoadingDialog;
 
-import isfaaghyth.app.mvp.App;
-import isfaaghyth.app.mvp.base.BaseActivity;
+import com.common.litao.mvp.App;
+import com.common.litao.mvp.base.BaseActivity;
 import rx.Subscriber;
 
 /**

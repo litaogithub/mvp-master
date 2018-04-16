@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.ui.login;
+package com.common.litao.mvp.ui.login;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -6,12 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.common.litao.mvp.R;
+import com.common.litao.mvp.base.BaseActivity;
+import com.common.litao.mvp.ui.main.MainActivity;
+import com.common.litao.mvp.util.IosAlertDialog;
+
 import butterknife.BindView;
 import butterknife.OnClick;
-import isfaaghyth.app.mvp.R;
-import isfaaghyth.app.mvp.base.BaseActivity;
-import isfaaghyth.app.mvp.ui.main.MainActivity;
-import isfaaghyth.app.mvp.util.IosAlertDialog;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
 

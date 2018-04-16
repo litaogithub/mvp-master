@@ -1,9 +1,9 @@
-package isfaaghyth.app.mvp.network;
+package com.common.litao.mvp.network;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import isfaaghyth.app.mvp.util.SPUtil;
+import com.common.litao.mvp.util.SPUtil;
 
 /**
  * 网络请求服务名，方法名

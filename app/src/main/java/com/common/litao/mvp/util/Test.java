@@ -1,11 +1,11 @@
-package isfaaghyth.app.mvp.util;
+package com.common.litao.mvp.util;
 
 import com.alibaba.fastjson.JSON;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import isfaaghyth.app.mvp.bean.MainDto;
+import com.common.litao.mvp.bean.MainDto;
 
 /**
  * author: litao29

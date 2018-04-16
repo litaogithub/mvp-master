@@ -1,6 +1,6 @@
-package isfaaghyth.app.mvp.network;
+package com.common.litao.mvp.network;
 
-import isfaaghyth.app.mvp.util.Const;
+import com.common.litao.mvp.util.Const;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;

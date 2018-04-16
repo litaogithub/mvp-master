@@ -1,12 +1,12 @@
-package isfaaghyth.app.mvp.base;
+package com.common.litao.mvp.base;
 
 import com.alibaba.fastjson.JSON;
 import com.jd.mrd.network.bean.WGResponseBean;
 import com.jd.mrd.network.wg.WgReqAsync;
 
-import isfaaghyth.app.mvp.bean.BusinessBean;
-import isfaaghyth.app.mvp.util.CommonUtil;
-import isfaaghyth.app.mvp.util.ParamUtil;
+import com.common.litao.mvp.bean.BusinessBean;
+import com.common.litao.mvp.util.CommonUtil;
+import com.common.litao.mvp.util.ParamUtil;
 import rx.Observable;
 import rx.functions.Func1;
 

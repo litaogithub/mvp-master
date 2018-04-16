@@ -1,6 +1,6 @@
-package isfaaghyth.app.mvp.network;
+package com.common.litao.mvp.network;
 
-import isfaaghyth.app.mvp.model.LoginModel;
+import com.common.litao.mvp.model.LoginModel;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;

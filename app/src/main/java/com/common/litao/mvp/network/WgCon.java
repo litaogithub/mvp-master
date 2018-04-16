@@ -1,10 +1,10 @@
-package isfaaghyth.app.mvp.network;
+package com.common.litao.mvp.network;
 
 
-import isfaaghyth.app.mvp.App;
-import isfaaghyth.app.mvp.base.BaseConstants;
-import isfaaghyth.app.mvp.util.CommonUtil;
-import isfaaghyth.app.mvp.util.SPUtil;
+import com.common.litao.mvp.App;
+import com.common.litao.mvp.base.BaseConstants;
+import com.common.litao.mvp.util.CommonUtil;
+import com.common.litao.mvp.util.SPUtil;
 
 /**
  * Created by yanghao1 on 2016/8/9.

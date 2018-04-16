@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.base;
+package com.common.litao.mvp.base;
 
 import rx.Observable;
 import rx.Subscriber;

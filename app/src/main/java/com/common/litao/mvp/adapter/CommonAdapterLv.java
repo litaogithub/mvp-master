@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.adapter;
+package com.common.litao.mvp.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

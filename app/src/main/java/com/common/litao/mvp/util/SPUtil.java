@@ -1,12 +1,12 @@
-package isfaaghyth.app.mvp.util;
+package com.common.litao.mvp.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import java.util.Set;
 
-import isfaaghyth.app.mvp.App;
-import isfaaghyth.app.mvp.base.BaseConstants;
+import com.common.litao.mvp.App;
+import com.common.litao.mvp.base.BaseConstants;
 
 public class SPUtil {
 

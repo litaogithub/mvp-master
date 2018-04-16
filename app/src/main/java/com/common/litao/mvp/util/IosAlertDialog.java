@@ -1,4 +1,4 @@
-package isfaaghyth.app.mvp.util;
+package com.common.litao.mvp.util;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import isfaaghyth.app.mvp.R;
+import com.common.litao.mvp.R;
 
 
 /**

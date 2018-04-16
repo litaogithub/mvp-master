@@ -1,12 +1,12 @@
-package isfaaghyth.app.mvp.util;
+package com.common.litao.mvp.util;
 
 import com.alibaba.fastjson.JSONArray;
 import com.jd.mrd.network.bean.WGRequestBean;
 
 import java.util.Arrays;
 
-import isfaaghyth.app.mvp.bean.BusinessBean;
-import isfaaghyth.app.mvp.network.WgCon;
+import com.common.litao.mvp.bean.BusinessBean;
+import com.common.litao.mvp.network.WgCon;
 
 /**
  * 参数组装类
